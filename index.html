@@ -3,17 +3,58 @@
   <head>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Hello World!</title>
+    <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+    <meta http-equiv="X-Content-Security-Policy" content="style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <title>PC Prebuilder</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
+    <div class="creator">
+      <div class="creator__content">
+        <h1 class="creator__name">PC Prebuilder</h1>
+        <h3 class="creator__description">Boost your computer experience</h3>
+        <div class="theme">
+          <div class="theme__choice theme__choice_active">Dark</div>
+          <div class="theme__choice">Light</div>
+          <div class="theme__active"></div>
+        </div>
+        <input type="file" accept=".exe" id="filePathInput" class="invisible"/>
+        <div class="creator__itemsBox itemsBox">
+          <input type="text" maxlength="32" id="prefabNameInput" class="creator__input" placeholder="Prefab name"/>
+          <ol class="itemsBox__content">
 
-    <!-- You can also require other files to run in this process -->
+          </ol>
+          <div class="creator__trigger">Add file to Prefab</div>
+          <!-- <div class="itemsBox__item"></div> -->
+        </div>
+        
+        <div class="creator__accepter">Create Prefab</div>
+      </div>
+    </div>
+    <div class="tasks">
+      <!-- <div class="tasks__prefab prefab">
+        <div class="prefab__name">Gaming</div>
+        <div class="prefab__number">#1</div>
+        <div class="prefab__content">
+          <div class="prefab__elem">name</div>
+        </div>
+        <div class="prefab__starter">Сконфигурировать</div>
+      </div> -->
+    </div>
+    <footer><p>Powered by cookies and tea<br/>version 1.0</p></footer>
+    <div class="notifications">
+      <!-- <div class="notifications__note note">
+        <div class="note__close">&times;</div>
+        <div class="note__text">Test</div>
+      </div> -->
+    </div>
+    <div class="bubbles">
+      <div class="bubbles__bubble bubbles__bubble_blue" data-k=".2"></div>
+      <div class="bubbles__bubble bubbles__bubble_red" data-k="1"></div>
+      <div class="bubbles__bubble bubbles__bubble_pink" data-k=".8"></div>
+      <div class="bubbles__bubble bubbles__bubble_green" data-k=".3"></div>
+    </div>
     <script src="./renderer.js"></script>
   </body>
 </html>

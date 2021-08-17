@@ -37,8 +37,6 @@ if (fs.existsSync('prefabs.json')) {
 
 // console.log(prefabs);
 
-// execute('C:\\Program Files (x86)\\Steam\\steam.exe');
-
 function createWindow () {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
